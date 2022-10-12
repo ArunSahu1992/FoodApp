@@ -10,5 +10,6 @@ namespace Travelapi
 
         public string? Summary { get; set; }
         public string? Summar1y { get; set; }
+        public string? Summar1sy { get; set; }
     }
 }
