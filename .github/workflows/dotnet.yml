@@ -2,17 +2,30 @@ name: .NET
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
-
     runs-on: [self-hosted]
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 6.0.x
+      - uses: actions/checkout@v3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Generate token
+        id: generatetok
+        run : |
+              $output = .\token.ps1
+               echo "test "+$output
+              echo "::set-output name=production::$output"
+        working-directory : ./.github/workflows
+        shell: powershell
+        
+      - name: Generate token
+        id: generate-tko
+        run :  |
+              echo "The message is ${{ steps.generatetok.outputs.production }}"
