@@ -18,7 +18,10 @@ jobs:
 
       - name: Generate token
         id: generate-tk
-        run : |
-                  $output = .\token.ps1
+        run : .\token.ps1
         working-directory : ./.github/workflows
-        shell: pwsh
+        shell: cmd
+        
+      - name: Generate token
+        id: generate-tko
+        run :  echo {{ $steps.generate-tk.outputs.token}}
