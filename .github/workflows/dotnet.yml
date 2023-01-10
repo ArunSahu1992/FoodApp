@@ -18,4 +18,7 @@ jobs:
 
       - name: Generate token
         id: generate-tk
-        uses: ./.github/workflows/generate-token
+        run : |
+                  $output = .\token.ps1
+        working-directory : ./.github/workflows
+        shell: cmd
