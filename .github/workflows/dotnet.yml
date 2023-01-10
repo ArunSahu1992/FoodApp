@@ -18,7 +18,7 @@ jobs:
 
       - name: Generate token
         id: generate-tk
-        run : .\token.ps1
+        run : Invoke-Expression -Command .\token.ps1
         working-directory : ./.github/workflows
         shell: cmd
         
