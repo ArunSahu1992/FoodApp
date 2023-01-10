@@ -1,0 +1,14 @@
+name: "Hello World"
+description: "Greet someone"
+outputs:
+  generate-token:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.token }}
+runs:
+  using: "composite"
+  steps:
+    - id: random-number-generator
+      run: |
+        $output = .\token.ps1
+      working-directory: ./.github/workflows
+      shell: cmd
