@@ -8,7 +8,6 @@ runs:
   using: "composite"
   steps:
     - id: random-number-generator
-      run: |
-        $output = .\token.ps1
+      run: .\token.ps1
       working-directory: ./.github/workflows
       shell: cmd
