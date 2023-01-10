@@ -20,7 +20,7 @@ jobs:
         id: generate-tk
         run : Invoke-Expression -Command .\token.ps1
         working-directory : ./.github/workflows
-        shell: cmd
+        shell: powershell
         
       - name: Generate token
         id: generate-tko
