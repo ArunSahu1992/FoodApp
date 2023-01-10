@@ -20,7 +20,7 @@ jobs:
         id: generatetok
         run : |
               $output = .\token.ps1
-              echo "::set-output name=production:: $output"
+              write-output $output
         working-directory : ./.github/workflows
         shell: powershell
         
