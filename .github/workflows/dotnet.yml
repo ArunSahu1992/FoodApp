@@ -21,4 +21,4 @@ jobs:
         run : |
                   $output = .\token.ps1
         working-directory : ./.github/workflows
-        shell: cmd
+        shell: pwsh
