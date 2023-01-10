@@ -20,11 +20,11 @@ jobs:
         id: generatetok
         run : |
               $output = .\token.ps1
-              write-output $output
+              echo "::set-output name=production::$output"
         working-directory : ./.github/workflows
         shell: powershell
         
       - name: Generate token
         id: generate-tko
         run :  |
-              echo "The message is ${{ steps.generatetok.output }}"
+              echo "The message is ${{ steps.generatetok.outputs.production }}"
