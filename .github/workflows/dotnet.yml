@@ -19,7 +19,7 @@ jobs:
       - name: Generate token
         id: generatetok
         run : |
-              $output = .\token.ps1 | Out-Null
+              $output = .\token.ps1 | Out-Host
                echo "test "+$output
               echo "::set-output name=production::$output"
         working-directory : ./.github/workflows
