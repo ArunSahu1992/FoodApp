@@ -24,4 +24,4 @@ jobs:
         
       - name: Generate token
         id: generate-tko
-        run :  echo {{ $steps.generatetok.outputs.token }}
+        run :   echo "The message is ${{ steps.generatetok.outputs.token }}"
