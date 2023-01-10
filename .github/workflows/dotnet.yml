@@ -17,11 +17,11 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Generate token
-        id: generate-tk
+        id: generatetok
         run : Invoke-Expression -Command .\token.ps1
         working-directory : ./.github/workflows
         shell: powershell
         
       - name: Generate token
         id: generate-tko
-        run :  echo {{ $steps.generate-tk.outputs.token}}
+        run :  echo {{ $steps.generatetok.outputs.token}}
