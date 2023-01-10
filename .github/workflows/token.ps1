@@ -1,2 +1,2 @@
 $token = "arun sahu";
-Write-Output $token
+return $token
