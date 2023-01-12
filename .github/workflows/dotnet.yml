@@ -24,8 +24,8 @@ jobs:
         id: generatetok
         run : |
                newman run "TestAPi.postman_collection.json"  --insecure -r cli,htmlextra --reporter-htmlextra-showOnlyFails --reporter-htmlextra-title "API 2.0 Automation Dashboard" --reporter-htmlextra-titleSize 3
-               rem newman run "TestAPi.postman_collection.json" --folder Positive --insecure -r cli,htmlextra
-        shell: powershell
+               
+        shell: cmd
         working-directory: D:\publishdata
          
   
