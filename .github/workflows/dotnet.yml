@@ -23,8 +23,14 @@ jobs:
       - name: Generate token
         id: generatetok
         run : |
-               Invoke-Expression ".\reg.bat"
+               call newman run "TestAPi.postman_collection.json"  --insecure -r cli,htmlextra --reporter-htmlextra-showOnlyFails --reporter-htmlextra-title "API 2.0 Automation Dashboard" --reporter-htmlextra-titleSize 3
+               rem call newman run "TestAPi.postman_collection.json" --folder Positive --insecure -r cli,htmlextra
         shell: powershell
         working-directory: D:\publishdata
-        
+         
+      - name: Generate token
+        run : |
+               echo "failed :$(jq '.run.stats.assertions.failed
+        shell: powershell
+        working-directory: D:\publishdata       
 
