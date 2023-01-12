@@ -10,11 +10,7 @@ jobs:
   build:
     runs-on: [self-hosted]
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: 6.0.x
+      - uses: actions/checkout@v3 
 
       - name: Install Newman
         run : npm install -g newman && npm install -g newman-reporter-htmlextra  
