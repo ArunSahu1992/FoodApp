@@ -21,7 +21,7 @@ jobs:
         shell: cmd
         
       - name: Generate token
-        id: generatetok
+        id: generatetk
         run : |
                newman run "TestAPi.postman_collection.json"  --insecure -r cli,htmlextra --reporter-htmlextra-showOnlyFails --reporter-htmlextra-title "API 2.0 Automation Dashboard" --reporter-htmlextra-titleSize 3
                
