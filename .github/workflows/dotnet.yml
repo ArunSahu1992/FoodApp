@@ -16,6 +16,9 @@ jobs:
         with:
           dotnet-version: 6.0.x
 
+      - name: Install Newman
+        run : npm install -g newman && npm install -g newman-reporter-htmlextra  
+        
       - name: Generate token
         id: generatetok
         run : |
