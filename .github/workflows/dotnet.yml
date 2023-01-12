@@ -19,14 +19,8 @@ jobs:
       - name: Generate token
         id: generatetok
         run : |
-              $source = "E:\Project\Travel\bin"
-              $destination = "C:\Logs"
-              Get-ChildItem $source -Recurse | Copy-Item -Destination $destination
-              
-              Remove-Item $source\* -Force -Recurse
+               Invoke-Expression ".\reg.bat"
         shell: powershell
+        working-directory: D:\publishdata
         
-      - name: Generate token
-        id: generate-tko
-        run :  |
-              echo "The message is ${{ steps.generatetok.outputs.production }}"
+
