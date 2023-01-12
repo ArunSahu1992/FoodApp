@@ -2,17 +2,27 @@ name: .NET
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
-
     runs-on: [self-hosted]
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 6.0.x
+      - uses: actions/checkout@v3 
+
+      - name: Install Newman
+        run : npm install -g newman && npm install -g newman-reporter-htmlextra  
+        shell: cmd
+        
+      - name: Generate token
+        id: generatetk
+        run : |
+               newman run "TestAPi.postman_collection.json"  --insecure -r cli,htmlextra --reporter-htmlextra-showOnlyFails --reporter-htmlextra-title "API 2.0 Automation Dashboard" --reporter-htmlextra-titleSize 3
+               
+        shell: cmd
+        working-directory: D:\publishdata\test
+         
+  
+
